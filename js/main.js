@@ -2,6 +2,9 @@ const bombs = 16;
 const first = 1;
 var last;
 var difficulty = prompt('scegliere livello di difficoltà 0/1/2');
+while (difficulty != '0' && difficulty != '1' && difficulty != '2') {
+    difficulty = prompt('valore non valido. scegliere livello di difficoltà 0/1/2');
+}
 if (difficulty == '0') {
     last = 100;
 }
@@ -9,7 +12,7 @@ else if (difficulty == '1') {
     last = 80;
 }
 else if (difficulty == '2') {
-    last = 20;
+    last = 50;
 }
 
 // function che genera n numeri random compresi tra min e max
