@@ -1,6 +1,7 @@
 const bombs = 16;
 const first = 1;
 var last;
+
 var difficulty = prompt('scegliere livello di difficoltà 0/1/2');
 while (difficulty != '0' && difficulty != '1' && difficulty != '2') {
     difficulty = prompt('valore non valido. scegliere livello di difficoltà 0/1/2');
@@ -53,6 +54,7 @@ for (var i = 0; i < last - bombs; i++) {
         if (bombsArray.indexOf(parseInt(userNums[i])) != -1) {
             bool1 = 'perso';
             var bool2 = prompt('hai ' + bool1 + ', totalizzando ' + i + ' punti. vuoi ricominciare? si/no');
+            i = last - bombs; /* per bloccare for */
             break;
         }
     }
