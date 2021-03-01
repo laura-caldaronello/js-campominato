@@ -30,7 +30,7 @@ for (var i = 0; i < bombs; i++) {
     userNums[i] = prompt('inserire numero n. ' + (i + 1) + ' ' + 'di ' + bombs);
     if (bombsArray.indexOf(parseInt(userNums[i])) != -1) {
         bool1 = 'perso';
-        var bool2 = prompt('hai perso. vuoi ricominciare?');
+        var bool2 = prompt('hai perso, totalizzando ' + i + ' punti. vuoi ricominciare? si/no');
         break;
     }
     while ((userNums.indexOf(userNums[i]) != -1 && userNums.indexOf(userNums[i]) < i) || parseInt(userNums[i]) != userNums[i] || userNums[i] < 1 || userNums[i] > 100) {
@@ -38,12 +38,18 @@ for (var i = 0; i < bombs; i++) {
         userNums[i] = prompt('inserire numero n. ' + (i + 1) + ' ' + 'di ' + bombs);
         if (bombsArray.indexOf(parseInt(userNums[i])) != -1) {
             bool1 = 'perso';
-            var bool2 = prompt('hai perso. vuoi ricominciare? si/no');
+            var bool2 = prompt('hai perso, totalizzando ' + i + ' punti. vuoi ricominciare? si/no');
             break;
         }
     }
 }
 if (bool1 = 'perso' && bool2 == 'si') {
     location.reload();
+}
+else if (bool1 = 'vinto') {
+    var bool2 = prompt('hai vinto! vuoi ricominciare? si/no');
+    if (bool2 == 'si') {
+        location.reload();
+    }
 }
 console.log(userNums);
