@@ -21,14 +21,29 @@ function nRandMinToMax(n,min,max) {
     return array;
 
 }
-console.log(nRandMinToMax(bombs,first,100));
+var bombsArray = nRandMinToMax(bombs,first,100);
+console.log(bombsArray);
 
 var userNums = [];
+var bool1 = 'vinto';
 for (var i = 0; i < bombs; i++) {
     userNums[i] = prompt('inserire numero n. ' + (i + 1) + ' ' + 'di ' + bombs);
+    if (bombsArray.indexOf(parseInt(userNums[i])) != -1) {
+        bool1 = 'perso';
+        var bool2 = prompt('hai perso. vuoi ricominciare?');
+        break;
+    }
     while ((userNums.indexOf(userNums[i]) != -1 && userNums.indexOf(userNums[i]) < i) || parseInt(userNums[i]) != userNums[i] || userNums[i] < 1 || userNums[i] > 100) {
         alert('valore non valido');
         userNums[i] = prompt('inserire numero n. ' + (i + 1) + ' ' + 'di ' + bombs);
+        if (bombsArray.indexOf(parseInt(userNums[i])) != -1) {
+            bool1 = 'perso';
+            var bool2 = prompt('hai perso. vuoi ricominciare? si/no');
+            break;
+        }
     }
+}
+if (bool1 = 'perso' && bool2 == 'si') {
+    location.reload();
 }
 console.log(userNums);
