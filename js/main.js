@@ -67,6 +67,7 @@ for (var i = 0; i < last - bombs; i++) {
     userNums[i] = prompt('inserire numero n. ' + (i + 1) + ' ' + 'di ' + (last - bombs));
     if (bombsArray.indexOf(parseInt(userNums[i])) != -1 && parseInt(userNums[i]) == userNums[i] && userNums[i] >= first && userNums[i] <= last) {
         bool1 = 'perso';
+        var userNums = []; /* in caso si volesse ricominciare */
         var bool2 = prompt('hai ' + bool1 + ', totalizzando ' + i + ' punti. vuoi ricominciare? si/no');
         break;
     }
@@ -75,6 +76,7 @@ for (var i = 0; i < last - bombs; i++) {
         userNums[i] = prompt('inserire numero n. ' + (i + 1) + ' ' + 'di ' + (last - bombs));
         if (bombsArray.indexOf(parseInt(userNums[i])) != -1) {
             bool1 = 'perso';
+            var userNums = []; /* in caso si volesse ricominciare */
             var bool2 = prompt('hai ' + bool1 + ', totalizzando ' + i + ' punti. vuoi ricominciare? si/no');
             i = last - bombs; /* per bloccare for */
             break;
