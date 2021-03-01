@@ -1,3 +1,5 @@
+// lascio commentate delle parti che possono essere la base per la traduzione grafica del gioco (se avrò tempo proverò a farlo)
+
 const bombs = 16;
 const first = 1;
 var last;
@@ -15,6 +17,10 @@ else if (difficulty == '1') {
 else if (difficulty == '2') {
     last = 50;
 }
+
+// for (var i = 0; i < last; i++) {
+//     document.getElementById('table').innerHTML += '<div class="squares"></div>';
+// }
 
 // function che genera n numeri random compresi tra min e max
 function nRandMinToMax(n,min,max) {
@@ -38,6 +44,22 @@ function nRandMinToMax(n,min,max) {
 }
 var bombsArray = nRandMinToMax(bombs,first,last);
 console.log(bombsArray);
+
+// for (var i = 0; i < bombsArray.length; i++) {
+//     document.getElementsByClassName('squares')[bombsArray[i]].innerHTML += '<div class="bombs"></div>';
+// }
+
+// var elements = document.getElementsByClassName('squares');
+// console.log(elements[0]);
+// elements[0].classList.add('grey');
+// console.log(elements[0]);
+
+// for (var i = 0; i < last; i++) {
+//     elements[i].addEventListener('click',function() {
+//         elements[i].classList.add('grey');
+//     }
+//     );
+// }
 
 var userNums = [];
 var bool1 = 'vinto';
