@@ -9,8 +9,12 @@
     height: 100vh;
     background-color: lightcyan;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.container h1 {
+    margin: 10px;
 }
 
 #table {
@@ -28,4 +32,10 @@
 
 .white {
     background-color: white;
+}
+
+#punti-container {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
 }

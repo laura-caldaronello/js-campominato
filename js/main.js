@@ -64,6 +64,9 @@ console.log(bombsArray); /* mi serve per testare */
 
 // versione grafica
 
+// scrivo il livello
+document.getElementById('titolo').innerHTML += difficulty;
+
 // generazione di tutte le caselle cliccabili
 for (var i = 0; i < last; i++) {
     document.getElementById('table').innerHTML += '<div class="squares"></div>';
@@ -72,6 +75,8 @@ for (var i = 0; i < last; i++) {
 // generazione interazioni
 var elements = document.getElementsByClassName('squares');
 var j = 0; /* per contare i click */
+// scrivo il punteggio inziale
+document.getElementById('punti').innerHTML = j;
 
 for (let i = 0; i < last; i++) { /* approfondire perchè con var non funziona e con let si */
     elements[i].addEventListener('click',function() {
@@ -82,6 +87,7 @@ for (let i = 0; i < last; i++) { /* approfondire perchè con var non funziona e 
         else {
             elements[i].classList += ' white';
             j++;
+            document.getElementById('punti').innerHTML = j;
             if (j == last - bombs) {
                 alert('hai vinto!');
                 location.reload();
