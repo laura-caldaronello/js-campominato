@@ -101,7 +101,7 @@ while (i < last - bombs && bool1 == 'vinto') {
 if (bool2 == 'si') {
     location.reload();
 }
-else if (bool2 != 'no' && bool2 != 'si') {
+else if (bool2 != 'no' && bool2 != 'si' && bool1 == 'perso') {
     alert('non ho capito ma ok');
 }
 
