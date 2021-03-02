@@ -32,6 +32,10 @@
 
 .white {
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
 }
 
 #punti-container {

@@ -64,6 +64,45 @@ console.log(bombsArray); /* mi serve per testare */
 
 // versione grafica
 
+// creazione suggerimenti
+var bombsAround = [];
+var i = first;
+while (i <= last) {
+    if (!isInArray(i,bombsArray)) {
+        var j = 0;
+        if (isInArray(i - 11,bombsArray) && i > 10 && (i - 1) % 10 != 0) {
+            j++;
+        }
+        if (isInArray(i - 10,bombsArray) && i > 10) {
+            j++;
+        }
+        if (isInArray(i - 9,bombsArray) && i > 10 && i % 10 != 0) {
+            j++;
+        }
+        if (isInArray(i - 1,bombsArray) && i != 1 && (i - 1) % 10 != 0) {
+            j++;
+        }
+        if (isInArray(i + 1,bombsArray) && i % 10 != 0) {
+            j++;
+        }
+        if (isInArray(i + 9,bombsArray) && i != 1 && (i - 1) % 10 != 0 && i <= last - 10) {
+            j++;
+        }
+        if (isInArray(i + 10,bombsArray) && i <= last - 10) {
+            j++;
+        }
+        if (isInArray(i + 11,bombsArray) && i <= last - 10 && i % 10 != 0) {
+            j++;
+        }
+        bombsAround.push(j);
+    }
+    else {
+        bombsAround.push('bomba!');
+    }
+    i++;
+}
+console.log(bombsAround);
+
 // scrivo il livello
 document.getElementById('titolo').innerHTML += difficulty;
 
@@ -86,6 +125,7 @@ for (let i = 0; i < last; i++) { /* approfondire perchè con var non funziona e 
         }
         else {
             elements[i].classList += ' white';
+            elements[i].innerHTML = bombsAround[i];
             j++;
             document.getElementById('punti').innerHTML = j;
             if (j == last - bombs) {
