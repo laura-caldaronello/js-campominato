@@ -34,7 +34,7 @@ function isInArray(value,array) {
 }
 // /function
 
-// lascio commentate delle parti che possono essere la base per la traduzione grafica del gioco (se avrò tempo proverò a farlo)
+// esercizio
 
 const bombs = 16;
 const first = 1;
@@ -60,7 +60,7 @@ switch (difficulty) {
 }
 
 var bombsArray = nRandMinToMax(bombs,first,last);
-console.log(bombsArray);
+console.log(bombsArray); /* mi serve per testare */
 
 // versione grafica
 
@@ -69,7 +69,7 @@ for (var i = 0; i < last; i++) {
     document.getElementById('table').innerHTML += '<div class="squares"></div>';
 }
 
-// generazione bombe in caselle vietate
+// generazione interazioni
 var elements = document.getElementsByClassName('squares');
 var j = 0; /* per contare i click */
 
@@ -90,7 +90,6 @@ for (let i = 0; i < last; i++) { /* approfondire perchè con var non funziona e 
     }
     );
 }
-
 
 // /versione grafica
 
