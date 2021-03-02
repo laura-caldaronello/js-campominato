@@ -123,7 +123,7 @@ for (let i = 0; i < last; i++) { /* approfondire perchè con var non funziona e 
             alert('hai perso, totalizzando ' + j + ' punti!');
             location.reload();
         }
-        else {
+        else if (elements[i].classList == 'squares') { /* solo per chi non è già stato cliccato */
             elements[i].classList += ' white';
             elements[i].innerHTML = bombsAround[i];
             j++;
